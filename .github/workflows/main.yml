@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run one line sript
+      run: echo Hello world
+    - name: Run multiline script
+      run: |
+        echo Add other actions to build
+        echo test, and deploy project
+    
